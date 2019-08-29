@@ -16,7 +16,7 @@
           color="info"
           type="Line"
         >
-          <h4 class="title font-weight-light">Daily Sales</h4>
+          <h4 class="title font-weight-light">Monthly Registrations</h4>
           <p class="category d-inline-flex font-weight-light">
             <v-icon
               color="green"
@@ -25,7 +25,7 @@
               mdi-arrow-up
             </v-icon>
             <span class="green--text">55%</span>&nbsp;
-            increase in today's sales
+            increase in this month's registrations
           </p>
 
           <template slot="actions">
@@ -51,8 +51,8 @@
           color="red"
           type="Bar"
         >
-          <h4 class="title font-weight-light">Email Subscription</h4>
-          <p class="category d-inline-flex font-weight-light">Last Campaign Performance</p>
+          <h4 class="title font-weight-light">Student Subscriptions</h4>
+          <p class="category d-inline-flex font-weight-light">Last Flow Performance</p>
 
           <template slot="actions">
             <v-icon
@@ -77,7 +77,7 @@
           type="Line"
         >
           <h3 class="title font-weight-light">Completed Tasks</h3>
-          <p class="category d-inline-flex font-weight-light">Last Last Campaign Performance</p>
+          <p class="category d-inline-flex font-weight-light">Last Project's Performance</p>
 
           <template slot="actions">
             <v-icon
@@ -86,7 +86,7 @@
             >
               mdi-clock-outline
             </v-icon>
-            <span class="caption grey--text font-weight-light">campaign sent 26 minutes ago</span>
+            <span class="caption grey--text font-weight-light">report sent 26 minutes ago</span>
           </template>
         </material-chart-card>
       </v-flex>
@@ -114,12 +114,12 @@
         <material-stats-card
           color="orange"
           icon="mdi-content-copy"
-          title="Used Space"
-          value="49/50"
-          small-value="GB"
+          title="Flows Accepted"
+          value="37/50"
+          small-value="docs"
           sub-icon="mdi-alert"
           sub-icon-color="error"
-          sub-text="Get More Space..."
+          sub-text="Chase the reps..."
           sub-text-color="text-primary"
         />
       </v-flex>
@@ -132,10 +132,10 @@
         <material-stats-card
           color="red"
           icon="mdi-information-outline"
-          title="Fixed Issues"
-          value="75"
+          title="Projects Canceled"
+          value="12"
           sub-icon="mdi-tag"
-          sub-text="Tracked from Github"
+          sub-text="Tracked by IOs"
         />
       </v-flex>
       <v-flex
@@ -159,8 +159,8 @@
       >
         <material-card
           color="orange"
-          title="Employee Stats"
-          text="New employees on 15th September, 2016"
+          title="Students Stats"
+          text="New students since 1st August, 2019"
         >
           <v-data-table
             :headers="headers"
@@ -182,7 +182,7 @@
             >
               <td>{{ index + 1 }}</td>
               <td>{{ item.name }}</td>
-              <td class="text-xs-right">{{ item.salary }}</td>
+              <td class="text-xs-right">{{ item.school }}</td>
               <td class="text-xs-right">{{ item.country }}</td>
               <td class="text-xs-right">{{ item.city }}</td>
             </template>
@@ -209,16 +209,16 @@
                 style="align-self: center"
               >Tasks:</span>
               <v-tab class="mr-3">
-                <v-icon class="mr-2">mdi-bug</v-icon>
-                Bugs
+                <v-icon class="mr-2">mdi-arrange-bring-forward</v-icon>
+                Flows
               </v-tab>
               <v-tab class="mr-3">
-                <v-icon class="mr-2">mdi-code-tags</v-icon>
-                Website
+                <v-icon class="mr-2">mdi-clipboard-outline</v-icon>
+                Projects
               </v-tab>
               <v-tab>
                 <v-icon class="mr-2">mdi-cloud</v-icon>
-                Server
+                Companies
               </v-tab>
             </v-tabs>
           </v-flex>
@@ -237,7 +237,7 @@
                     />
                   </v-list-tile-action>
                   <v-list-tile-title>
-                    Sign contract for "What are conference organized afraid of?"
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   </v-list-tile-title>
                   <div class="d-flex">
                     <v-tooltip
@@ -278,7 +278,7 @@
                     />
                   </v-list-tile-action>
                   <v-list-tile-title>
-                    Lines From Great Russian Literature? Or E-mails From My Boss?
+                    Sed dapibus neque ac orci sagittis, vel fringilla magna finibus.
                   </v-list-tile-title>
                   <div class="d-flex">
                     <v-tooltip
@@ -318,7 +318,7 @@
                     />
                   </v-list-tile-action>
                   <v-list-tile-title>
-                    Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
+                    Suspendisse rhoncus turpis sit amet arcu tempus, euismod consequat sapien auctor.
                   </v-list-tile-title>
                   <div class="d-flex">
                     <v-tooltip
@@ -461,8 +461,8 @@ export default {
         },
         {
           sortable: false,
-          text: 'Salary',
-          value: 'salary',
+          text: 'School',
+          value: 'school',
           align: 'right'
         },
         {
@@ -483,28 +483,31 @@ export default {
           name: 'Dakota Rice',
           country: 'Niger',
           city: 'Oud-Tunrhout',
-          salary: '$35,738'
+          school: 'Love HighSchool'
         },
         {
           name: 'Minerva Hooper',
           country: 'Curaçao',
           city: 'Sinaai-Waas',
-          salary: '$23,738'
-        }, {
+          school: 'Nobody Knows High'
+        },
+        {
           name: 'Sage Rodriguez',
           country: 'Netherlands',
           city: 'Overland Park',
-          salary: '$56,142'
-        }, {
+          school: 'Montessori Lyceum'
+        },
+        {
           name: 'Philip Chanley',
           country: 'Korea, South',
           city: 'Gloucester',
-          salary: '$38,735'
-        }, {
+          school: 'Korean Arts High School'
+        },
+        {
           name: 'Doris Greene',
           country: 'Malawi',
           city: 'Feldkirchen in Kārnten',
-          salary: '$63,542'
+          school: 'Chilumba Boys'
         }
       ],
       tabs: 0,

@@ -43,8 +43,8 @@ export default [
     view: 'Notifications'
   },
   {
-    path: '/upgrade',
-    name: 'Upgrade to PRO',
-    view: 'Upgrade'
+    path: '/project-view',
+    name: 'Project View',
+    view: 'ProjectView'
   }
 ]

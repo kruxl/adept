@@ -21,15 +21,7 @@
               <v-layout wrap>
                 <v-flex
                   xs12
-                  md4
-                >
-                  <v-text-field
-                    label="Company (disabled)"
-                    disabled/>
-                </v-flex>
-                <v-flex
-                  xs12
-                  md4
+                  md6
                 >
                   <v-text-field
                     class="purple-input"
@@ -38,7 +30,7 @@
                 </v-flex>
                 <v-flex
                   xs12
-                  md4
+                  md6
                 >
                   <v-text-field
                     label="Email Address"
@@ -124,13 +116,13 @@
             size="130"
           >
             <img
-              src="https://demos.creative-tim.com/vue-material-dashboard/img/marc.aba54d65.jpg"
+              src="https://scontent.fotp3-3.fna.fbcdn.net/v/t1.0-9/17523287_1485801048131997_7947026630513466241_n.jpg?_nc_cat=101&_nc_oc=AQk39O_sjjujuliEulvFSsBXpRvWS0OgVDB9LAx-NulGpXR-i1O5avenheKeIp2e21k&_nc_ht=scontent.fotp3-3.fna&oh=d4a6f0900008c832eb235561143514e7&oe=5DD2D643"
             >
           </v-avatar>
           <v-card-text class="text-xs-center">
             <h6 class="category text-gray font-weight-thin mb-3">CEO / CO-FOUNDER</h6>
-            <h4 class="card-title font-weight-light">Alec Thompson</h4>
-            <p class="card-description font-weight-light">Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...</p>
+            <h4 class="card-title font-weight-light">Eduard Ganescu</h4>
+            <p class="card-description font-weight-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus neque ac orci sagittis, vel fringilla magna finibus. Suspendisse rhoncus turpis sit amet arcu tempus, euismod consequat sapien auctor. Nam in dignissim libero, id hendrerit lacus. Donec in ex eu sem commodo elementum....</p>
             <v-btn
               color="success"
               round

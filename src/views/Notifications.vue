@@ -15,7 +15,7 @@
           >
             <div class="title font-weight-light mb-2">Notifications</div>
             <div class="category">
-              Handcrafted by us with
+              Handcrafted by Andrei with
               <v-icon
                 size="17"
               >
@@ -69,7 +69,7 @@
               <v-flex
                 md6
                 sm12>
-                <h2 class="title font-weight-light">Notifcation States</h2>
+                <h2 class="title font-weight-light">Notifications States</h2>
 
                 <material-notification
                   class="mb-3"
@@ -113,7 +113,7 @@
               </v-flex>
             </v-layout>
             <div class="text-xs-center">
-              <h2 class="title font-weight-light mb-2">Notification Places</h2>
+              <h2 class="title font-weight-light mb-2">Notification Testing</h2>
               <span class=" subheading font-weight-light grey--text">Click to view notifications</span>
             </div>
 
@@ -122,71 +122,6 @@
                 justify-center
                 row
                 wrap>
-                <v-flex
-                  xs12
-                  sm4>
-                  <v-btn
-                    block
-                    color="success"
-                    @click="snack('top', 'left')"
-                  >
-                    Top Left
-                  </v-btn>
-                </v-flex>
-                <v-flex
-                  xs12
-                  sm4>
-                  <v-btn
-                    block
-                    color="success"
-                    @click="snack('top')"
-                  >
-                    Top Center
-                  </v-btn>
-                </v-flex>
-              </v-layout>
-              <v-layout
-                justify-center
-                row
-                wrap>
-                <v-flex
-                  xs12
-                  sm4>
-                  <v-btn
-                    block
-                    color="success"
-                    @click="snack('top', 'right')"
-                  >
-                    Top Right
-                  </v-btn>
-                </v-flex>
-                <v-flex
-                  xs12
-                  sm4>
-                  <v-btn
-                    block
-                    color="success"
-                    @click="snack('bottom', 'left')"
-                  >
-                    Bottom Left
-                  </v-btn>
-                </v-flex>
-              </v-layout>
-              <v-layout
-                justify-center
-                row
-                wrap>
-                <v-flex
-                  xs12
-                  sm4>
-                  <v-btn
-                    block
-                    color="success"
-                    @click="snack('bottom')"
-                  >
-                    Bottom Center
-                  </v-btn>
-                </v-flex>
                 <v-flex
                   xs12
                   sm4>
@@ -216,7 +151,7 @@
               >
                 mdi-bell-plus
               </v-icon>
-              <div>Welcome to <b>Vue Material Dashboard</b> - a beautiful freebie for every web developer.</div>
+              <div>The flow <b>Some Flow Name</b> - has been successfully submitted.</div>
               <v-icon
                 size="16"
                 @click="snackbar = false"

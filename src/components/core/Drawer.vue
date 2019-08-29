@@ -104,11 +104,11 @@ export default {
         icon: 'mdi-account-multiple-plus',
         text: 'Add Students'
       },
-      // {
-      //   to: '/icons',
-      //   icon: 'mdi-chart-bubble',
-      //   text: 'Icons'
-      // },
+      {
+        to: '/project-view',
+        icon: 'mdi-chart-bubble',
+        text: 'Project View'
+      },
       {
         to: '/notifications',
         icon: 'mdi-bell',

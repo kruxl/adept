@@ -101,9 +101,9 @@ import {
 export default {
   data: () => ({
     notifications: [
-      'Mike, John responded to your email',
-      'You have 5 new tasks',
-      'You\'re now a friend with Andrew',
+      'A new Flow has been added',
+      'You have 3 new tasks',
+      '4 new students have been added',
       'Another Notification',
       'Another One'
     ],

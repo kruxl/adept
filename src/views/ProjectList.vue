@@ -40,14 +40,49 @@
               <td>{{ item.duration }}</td>
               <td>{{ item.status }}</td>
               <!-- <td>{{ item.salary }}</td> -->
-              <td class="text-xs-right"><v-btn
-                icon
-                small
-                to="/icons"><v-icon color="success">mdi-airplay</v-icon></v-btn></td>
-              <td><v-btn
-                icon
-                small
-                to="/add-flow"><v-icon color="success">mdi-pencil</v-icon></v-btn></td>
+              <td>                  <div class="d-flex">
+                <v-tooltip
+                  top
+                  content-class="top">
+                  <v-btn
+                    slot="activator"
+                    class="v-btn--simple"
+                    color="success"
+                    to="/add-flow"
+                    icon
+                  >
+                    <v-icon color="primary">mdi-arrange-bring-forward</v-icon>
+                  </v-btn>
+                  <span>Add Flow</span>
+                </v-tooltip>
+                <v-tooltip
+                  top
+                  content-class="top">
+                  <v-btn
+                    slot="activator"
+                    class="v-btn--simple"
+                    color="success"
+                    icon
+                  >
+                    <v-icon color="primary">mdi-airplay</v-icon>
+                  </v-btn>
+                  <span>View</span>
+                </v-tooltip>
+                <v-tooltip
+                  top
+                  content-class="top">
+                  <v-btn
+                    slot="activator"
+                    class="v-btn--simple"
+                    color="danger"
+                    icon
+                  >
+                    <v-icon color="error">mdi-close</v-icon>
+                  </v-btn>
+                  <span>Delete</span>
+                </v-tooltip>
+
+              </div></td>
             </template>
           </v-data-table>
           <v-btn
