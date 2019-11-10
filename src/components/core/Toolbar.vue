@@ -87,6 +87,13 @@
         >
           <v-icon color="tertiary">mdi-account</v-icon>
         </router-link>
+        <v-icon
+          v-ripple
+          class="toolbar-items"
+          color="tertiary"
+        >
+          mdi-logout
+        </v-icon>
       </v-flex>
     </v-toolbar-items>
   </v-toolbar>

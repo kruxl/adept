@@ -1,5 +1,7 @@
-// https://vuex.vuejs.org/en/state.html
-
 export default {
-  //
+    user: {
+      loggedIn: false,
+      data: null,
+      userDetails: null
+    }
 }

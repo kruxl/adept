@@ -11,17 +11,19 @@ import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 import Router from 'vue-router'
 import Meta from 'vue-meta'
+import firebase from 'firebase'
 
 // Routes
 import paths from './paths'
 
-function route (path, view, name) {
+function route (path, view, name, meta) {
   return {
     name: name || view,
     path,
-    component: (resovle) => import(
+    meta,
+    component: (resolve) => import(
       `@/views/${view}.vue`
-    ).then(resovle)
+    ).then(resolve)
   }
 }
 
@@ -30,7 +32,7 @@ Vue.use(Router)
 // Create a new router
 const router = new Router({
   mode: 'history',
-  routes: paths.map(path => route(path.path, path.view, path.name)).concat([
+  routes: paths.map(path => route(path.path, path.view, path.name, path.meta)).concat([
     { path: '*', redirect: '/dashboard' }
   ]),
   scrollBehavior (to, from, savedPosition) {
@@ -43,6 +45,22 @@ const router = new Router({
     return { x: 0, y: 0 }
   }
 })
+
+router.beforeEach((to, from, next) => {
+
+  const currentUser = firebase.auth().currentUser;
+  console.log(currentUser);
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  console.log(requiresAuth)
+  if (requiresAuth && !currentUser) {
+    next('/login');
+  } else if (requiresAuth && currentUser) {
+    next();
+  } else {
+    next();
+  }
+
+});
 
 Vue.use(Meta)
 

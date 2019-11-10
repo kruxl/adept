@@ -34,6 +34,44 @@ import App from './App'
 import i18n from '@/i18n'
 import router from '@/router'
 import store from '@/store'
+import firebase from 'firebase'
+
+// Firebase config
+
+const configOptions = {
+  apiKey: "AIzaSyA0jm-sWn2IQ9x1uVbJo6xVHt1Iw0bBa2M",
+  authDomain: "adeptprod-11172.firebaseapp.com",
+  databaseURL: "https://adeptprod-11172.firebaseio.com",
+  projectId: "adeptprod-11172",
+  storageBucket: "adeptprod-11172.appspot.com",
+  messagingSenderId: "204009232209",
+  appId: "1:204009232209:web:ed790933b1e2491df2e570",
+  measurementId: "G-042LNKE017"
+}
+
+// init firebase
+
+firebase.initializeApp(configOptions);
+
+const db = firebase.firestore();
+
+// authState checkups
+
+firebase.auth().onAuthStateChanged(user => {
+  store.dispatch('fetchUser', user);
+  if (user) {
+    return db.collection('users').get().then(snapshot => {
+      snapshot.forEach(doc => {
+        const userDetails = doc.data();
+        if (userDetails.uid = user.uid) {
+          store.dispatch('getUserData', userDetails);
+        } else {
+          console.log('no records found for this guy');
+        }
+      })
+    });
+  }
+});
 
 // Sync store with router
 sync(store, router)
