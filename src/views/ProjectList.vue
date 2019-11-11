@@ -35,11 +35,9 @@
               slot-scope="{ item }"
             >
               <td>{{ item.name }}</td>
-              <td>{{ item.country }}</td>
-              <td>{{ item.city }}</td>
-              <td>{{ item.duration }}</td>
-              <td>{{ item.status }}</td>
-              <!-- <td>{{ item.salary }}</td> -->
+              <td>{{ item.number }}</td>
+              <td>{{ item.startDate }}</td>
+              <td>{{ item.endDate }}</td>
               <td>                  <div class="d-flex">
                 <v-tooltip
                   top
@@ -106,7 +104,7 @@
                 <v-layout wrap>
                   <v-flex
                     xs12
-                    md12
+                    md6
                   >
                     <v-text-field
                       v-model="newProject.name"
@@ -118,36 +116,65 @@
                     md6
                   >
                     <v-text-field
-                      v-model="newProject.country"
-                      label="Country"
+                      v-model="newProject.number"
+                      label="Project Number"
                       class="purple-input"/>
                   </v-flex>
                   <v-flex
                     xs12
                     md6
                   >
-                    <v-text-field
-                      v-model="newProject.city"
-                      label="City"
-                      class="purple-input"/>
+                    <v-menu
+                      ref="menu"
+                      v-model="menu1"
+                      :close-on-content-click="false"
+                      :return-value.sync="date1"
+                      transition="scale-transition"
+                      offset-y
+                      min-width="290px"
+                    >
+                      <template v-slot:activator="{ on }">
+                        <v-text-field
+                          v-model="newProject.startDate"
+                          label="Start Date"
+                          readonly
+                          v-on="on"
+                        ></v-text-field>
+                      </template>
+                      <v-date-picker v-model="newProject.startDate" no-title scrollable color="green lighten-1">
+                        <v-spacer></v-spacer>
+                        <v-btn text color="warning" @click="menu1 = false">Cancel</v-btn>
+                        <v-btn text color="success" @click="$refs.menu.save(newProject.startDate)">OK</v-btn>
+                      </v-date-picker>
+                    </v-menu>
                   </v-flex>
                   <v-flex
                     xs12
                     md6
                   >
-                    <v-text-field
-                      v-model="newProject.duration"
-                      label="Duration"
-                      class="purple-input"/>
-                  </v-flex>
-                  <v-flex
-                    xs12
-                    md6
-                  >
-                    <v-text-field
-                      v-model="newProject.status"
-                      label="Status"
-                      class="purple-input"/>
+                    <v-menu
+                      ref="menu"
+                      v-model="menu2"
+                      :close-on-content-click="false"
+                      :return-value.sync="date2"
+                      transition="scale-transition"
+                      offset-y
+                      min-width="290px"
+                    >
+                      <template v-slot:activator="{ on }">
+                        <v-text-field
+                          v-model="newProject.endDate"
+                          label="End Date"
+                          readonly
+                          v-on="on"
+                        ></v-text-field>
+                      </template>
+                      <v-date-picker v-model="newProject.endDate" no-title scrollable color="green lighten-1">
+                        <v-spacer></v-spacer>
+                        <v-btn text color="warning" @click="menu2 = false">Cancel</v-btn>
+                        <v-btn text color="success" @click="$refs.menu.save(newProject.endDate)">OK</v-btn>
+                      </v-date-picker>
+                    </v-menu>
                   </v-flex>
                   <v-flex
                     xs12
@@ -178,55 +205,39 @@ export default {
     headers: [
       {
         sortable: false,
-        text: 'Name',
+        text: 'Project Name',
         value: 'name'
       },
       {
         sortable: false,
-        text: 'Country',
-        value: 'country'
+        text: 'Project Number',
+        value: 'number'
       },
       {
         sortable: false,
-        text: 'City',
-        value: 'city'
+        text: 'Start Date',
+        value: 'startDate'
       },
       {
         sortable: false,
-        text: 'Duration',
-        value: 'duration'
-      },
-      {
-        sortable: false,
-        text: 'Status',
-        value: 'status'
+        text: 'End Date',
+        value: 'endDate'
       }
     ],
-    items: [
-      {
-        name: 'Dakota Rice',
-        country: 'Niger',
-        city: 'Oud-Tunrhout',
-        duration: '6 months',
-        status: 'Completed'
-      },
-      {
-        name: 'Minerva Hooper',
-        country: 'Curaçao',
-        city: 'Sinaai-Waas',
-        duration: '1 year',
-        status: 'In Progress'
-      }
-    ],
+    items: [],
     newProject: {
       name: '',
-      country: '',
-      city: '',
-      duration: '',
-      status: ''
+      number: '',
+      startDate: '',
+      endDate: ''
     },
     visible: false,
-    e6: 1
+    e6: 1,
+    date1: new Date().toISOString().substr(0, 10),
+    date2: new Date().toISOString().substr(0, 10),
+    menu1: false,
+    modal: false,
+    menu2: false
   }),
   methods: {
     addNewProject () {
@@ -237,3 +248,16 @@ export default {
   }
 }
 </script>
+<style>
+.v-btn--floating .v-btn__content {
+  color: black;
+}
+.accent {
+  background-color: red !important;
+  border-radius: 50%;
+}
+.accent--text {
+  color: red !important;
+}
+</style>
+

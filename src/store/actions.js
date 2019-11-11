@@ -15,10 +15,11 @@ export default {
     },
     getUserData({ commit }, userDetails) {
       commit('setUserData', {
-        isAdmin: userDetails.admin,
-        isIo: userDetails.io,
-        isStudent: userDetails.student,
-        isTeacher: userDetails.teacher
+        // isAdmin: userDetails.admin,
+        data: userDetails
       });
+    },
+    removeUser({ commit }, userDetails) {
+      commit('removeUser');
     }
 }

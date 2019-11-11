@@ -9,5 +9,8 @@ export default {
     },
     setUserData(state, data) {
       state.user.userDetails = data;
+    },
+    removeUser(state, data) {
+      state.user.userDetails = null;
     }
 }

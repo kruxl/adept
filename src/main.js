@@ -63,13 +63,15 @@ firebase.auth().onAuthStateChanged(user => {
     return db.collection('users').get().then(snapshot => {
       snapshot.forEach(doc => {
         const userDetails = doc.data();
-        if (userDetails.uid = user.uid) {
+        if (userDetails.uid == user.uid) {
           store.dispatch('getUserData', userDetails);
         } else {
-          console.log('no records found for this guy');
+          console.log('this is not' + " " + user.uid);
         }
       })
     });
+  } else {
+    store.dispatch('removeUser');
   }
 });
 
