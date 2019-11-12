@@ -8,6 +8,7 @@
   </v-app>
 </template>
 
+
 <style lang="scss">
 @import '@/styles/index.scss';
 
